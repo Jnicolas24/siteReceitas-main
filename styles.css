@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 200px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+img {
+    max-width: 200px;
+}
+
+.card:hover {
+    background-color: #f4f4f4;
+}
+
+.detalhes-container {
+    margin-top: 50px;
+}

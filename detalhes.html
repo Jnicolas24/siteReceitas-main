@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Receita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="detalhes-container">
+        <h1 id="titulo"></h1>
+        <p id="descricao"></p>
+        <a href="index.html">Voltar</a>
+    </div>
+
+    <script>
+        const receitas = {
+            "1": { titulo: "Risoto de Cogumelos", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão." },
+            "2": { titulo: "Frango Assado com Ervas", descricao: "Frango suculento assado com ervas frescas e limão." },
+            "3": { titulo: "Salada Caprese", descricao: "Salada italiana clássica com tomate, mozzarella e manjericão." },
+            "4": { titulo: "Lasanha à Bolonhesa", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
+            "5": { titulo: "Bolo de cenoura", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
+            "6": { titulo: "Moqueca de peixe", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
+            "7": { titulo: "Lasanha à Bolonhesa", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
+            "8": { titulo: "Bolo de Cenoura", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
+            "9": { titulo: "Lasanha à Bolonhesa", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
+
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+        if (id && receitas[id]) {
+            document.getElementById("titulo").textContent = receitas[id].titulo;
+            document.getElementById("descricao").textContent = receitas[id].descricao;
+        } else {
+            document.body.innerHTML = "<h1>Receita não encontrada</h1><a href='index.html'>Voltar</a>";
+        }
+    </script>
+</body>
+</html>
