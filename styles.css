@@ -1,33 +1,123 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+  font-family: 'Inter', Sans-serif;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
 }
 
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+body {
+  background-color: #fffbeb;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.header-principal {
+  display: flex;
+  align-items: center;
+  background-color: #e6750d;
+  justify-content: center;
+  height: 16vh;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 2;
+  padding: 0;
+}
+
+.subtitle {
+  color: #92401e;
+  padding-top: 25px;
 }
 
 .card {
-    width: 200px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-img {
-    max-width: 200px;
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  gap: 16px;
+  padding: 16px;
+}
+
+.card {
+  width: 200px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: white;
+  column-span: 1;
+}
+
+.card p {
+  color: black;
 }
 
 .card:hover {
-    background-color: #f4f4f4;
+  background-color: #f4f4f4;
 }
 
 .detalhes-container {
-    margin-top: 50px;
+  margin-top: 50px;
+}
+
+.tab-content {
+  display: none;
+  color: black;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab.active {
+  background-color: #ddd;
+}
+
+.back-button {
+  color: #92400e;
+  text-decoration: none;
+  text-align: left;
+}
+
+footer {
+  background-color: #92400e;
+  padding: 35px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #eccb5a;
+}
+
+.footer-title {
+  font-size: x-large;
+  text-align: left;
+  font-weight: bold;
+}
+
+.footer-subtitle {
+  text-align: left;
+  color: #eccb5a;
+}
+
+.footer-description {
+  color: #eccb5a;
 }

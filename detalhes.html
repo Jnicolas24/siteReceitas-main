@@ -1,40 +1,150 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes da Receita</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="detalhes-container">
-        <h1 id="titulo"></h1>
-        <p id="descricao"></p>
-        <a href="index.html">Voltar</a>
+      <img id="url" src="" alt="" />
+      <h1 id="titulo"></h1>
+      <p id="descricao"></p>
+      <a href="index.html" class="back-button">Voltar para receitas</a>
+      <div class="tabs">
+        <button class="tab active" data-tab="tab1">Ingredientes</button>
+        <button class="tab" data-tab="tab2">Informações Nutricionais</button>
+      </div>
+
+      <div class="tab-contents">
+        <div id="tab1" class="tab-content active">
+          <h2>Ingredientes</h2>
+          <ul id="ingredientes-list"></ul>
+        </div>
+        <div id="tab2" class="tab-content">
+          <h2>Informações Nutricionais</h2>
+          <p><strong>Calorias:</strong> <span id="calorias"></span></p>
+          <p><strong>Proteínas:</strong> <span id="proteinas"></span></p>
+          <p><strong>Carboidratos:</strong> <span id="carboidratos"></span></p>
+          <p><strong>Gorduras:</strong> <span id="gorduras"></span></p>
+          <p><strong>Fibras:</strong> <span id="fibras"></span></p>
+        </div>
+      </div>
     </div>
+    <footer>
+        <p class="footer-title">Sabores da casa</p>
+        <p class="footer-subtitle">Receitas para todos os gostos</p>
+  
+        <p class="footer-description">
+          &copy2025 Sabores da Casa. Todos os direitos reservados.
+        </p>
+      </footer>
 
     <script>
-        const receitas = {
-            "1": { titulo: "Risoto de Cogumelos", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão." },
-            "2": { titulo: "Frango Assado com Ervas", descricao: "Frango suculento assado com ervas frescas e limão." },
-            "3": { titulo: "Salada Caprese", descricao: "Salada italiana clássica com tomate, mozzarella e manjericão." },
-            "4": { titulo: "Lasanha à Bolonhesa", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
-            "5": { titulo: "Bolo de cenoura", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
-            "6": { titulo: "Moqueca de peixe", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
-            "7": { titulo: "Lasanha à Bolonhesa", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
-            "8": { titulo: "Bolo de Cenoura", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
-            "9": { titulo: "Lasanha à Bolonhesa", descricao: "Um cremoso risoto italiano com cogumelos frescos e parmesão."},
+      const receitas = {
+        1: {
+          titulo: 'Risoto de Cogumelos',
+          descricao:
+            'Um cremoso risoto italiano com cogumelos frescos e parmesão.',
+          url: './images/risoto_de_cogumelo.jpg',
+          tempo: '55 min',
+          porcoes: 4,
+          dificuldade: 'Médio',
+          ingredientes: [
+            '300g de arroz arbório',
+            '200g de cogumelos variados{paris, shitake, portobello}',
+            '1 cebole média picada',
+            '2 dentes de alho picados',
+            '150ml de vinho branco seco',
+            '1L de caldo de legumes quentes',
+            '50g de manteiga',
+            '100g de queijo parmesão ralado',
+            '2 colheres de sopa de azeite de oliva',
+            'sal e pimenta a gosto',
+            'salsinha picada para finalizar',
+          ],
+          calorias: '450g kcal',
+          proteinas: '12g',
+          carboidratos: '65g',
+          gorduras: '15g',
+          fibras: '3g',
+        },
+        2: {
+          titulo: 'Frango Assado com Ervas',
+          descricao: 'Frango suculento assado com ervas frescas e limão.',
+          url: './images/risoto_de_cogumelo.jpg',
+        },
+        3: {
+          titulo: 'Salada Caprese',
+          descricao:
+            'Salada italiana clássica com tomate, mozzarella e manjericão.',
+          url: './images/risoto_de_cogumelo.jpg',
+        },
+        4: {
+          titulo: 'Lasanha à Bolonhesa',
+          descricao:
+            'Um cremoso risoto italiano com cogumelos frescos e parmesão.',
+          url: './images/risoto_de_cogumelo.jpg',
+        },
+        5: {
+          titulo: 'Bolo de cenoura',
+          descricao:
+            'Um cremoso risoto italiano com cogumelos frescos e parmesão.',
+          url: './images/risoto_de_cogumelo.jpg',
+        },
+        6: {
+          titulo: 'Moqueca de peixe',
+          descricao:
+            'Um cremoso risoto italiano com cogumelos frescos e parmesão.',
+          url: './images/risoto_de_cogumelo.jpg',
+        },
+        7: {
+          titulo: 'Lasanha à Bolonhesa',
+          descricao:
+            'Um cremoso risoto italiano com cogumelos frescos e parmesão.',
+          url: './images/risoto_de_cogumelo.jpg',
+        },
+        8: {
+          titulo: 'Bolo de Cenoura',
+          descricao:
+            'Um cremoso risoto italiano com cogumelos frescos e parmesão.',
+          url: './images/risoto_de_cogumelo.jpg',
+        },
+        9: {
+          titulo: 'Moqueca de Peixe',
+          descricao:
+            'Um cremoso risoto italiano com cogumelos frescos e parmesão.',
+          url: './images/risoto_de_cogumelo.jpg',
+        },
+      };
 
-        };
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+      if (id && receitas[id]) {
+        document.getElementById('titulo').textContent = receitas[id].titulo;
+        document.getElementById('descricao').textContent =
+          receitas[id].descricao;
+        document.getElementById('url').src = receitas[id].url;
+      } else {
+        document.body.innerHTML =
+          "<h1>Receita não encontrada</h1><a href='index.html'>Voltar</a>";
+      }
 
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get("id");
-        if (id && receitas[id]) {
-            document.getElementById("titulo").textContent = receitas[id].titulo;
-            document.getElementById("descricao").textContent = receitas[id].descricao;
-        } else {
-            document.body.innerHTML = "<h1>Receita não encontrada</h1><a href='index.html'>Voltar</a>";
-        }
+      const tabs = document.querySelectorAll(".tab");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          tabContents.forEach((content) => content.classList.remove("active"));
+
+          tab.classList.add("active");
+
+          const targetTab = tab.getAttribute("data-tab");
+          document.getElementById(targetTab).classList.add("active");
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
