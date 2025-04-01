@@ -65,6 +65,7 @@ body {
   transition: 0.3s;
   background-color: white;
   column-span: 1;
+  width: calc(33% - 20px);
 }
 
 .card p {
@@ -74,6 +75,38 @@ body {
 .card:hover {
   background-color: #f4f4f4;
 }
+
+.title-name {
+  color: #97461B;
+}
+
+footer {
+  background-color: #92400e;
+  text-align: center;
+  padding: 35px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #eccb5a;
+}
+
+.footer-title {
+  font-size: x-large;
+  text-align: left;
+  font-weight: bold;
+}
+
+.footer-subtitle {
+  text-align: left;
+  color: #eccb5a;
+}
+
+.footer-description {
+  color: #eccb5a;
+}
+
+
+/* Página de Detalhes */
 
 .detalhes-container {
   margin-top: 50px;
@@ -98,26 +131,3 @@ body {
   text-align: left;
 }
 
-footer {
-  background-color: #92400e;
-  padding: 35px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color: #eccb5a;
-}
-
-.footer-title {
-  font-size: x-large;
-  text-align: left;
-  font-weight: bold;
-}
-
-.footer-subtitle {
-  text-align: left;
-  color: #eccb5a;
-}
-
-.footer-description {
-  color: #eccb5a;
-}
